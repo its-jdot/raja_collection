@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :customers
   get 'home/homePage'
   devise_for :users
   
