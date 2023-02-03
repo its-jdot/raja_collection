@@ -2,8 +2,8 @@
     <div class="portlet box green-meadow">
         <div class="portlet-title">
             <div class="caption">
-                <i class="fa fa-cogs"></i>Customer </div>
-            <div class="actions">
+                <i class="fa fa-cogs"></i> <h3> Customers </h3></div>
+            <div class="add_new">
               <%= link_to 'New Customer', new_customer_path, class:"btn btn-primary" %>
             </div>
         </div>
@@ -18,7 +18,8 @@
                 <th>Customer Name</th>
                 <th>Phone No</th>
                 <th>Date / Other</th>
-                
+                <th> Created </th>
+                <th> Modified </th>
                 <th>Actions</th>
                 
               </tr>
@@ -29,10 +30,12 @@
               <tr>
                 <td><input type="checkbox" class="checkboxes" value="1" /></td>
                 <td><%= customer.id %></td>
-                <td><%= customer.size_no %></td>
+                <td><%= link_to customer.size_no, edit_customer_path(customer) %></td>
                 <td><%= customer.name %></td>
                 <td><%= customer.phone_no %></td>
                 <td><%= customer.others %></td>
+                <td><%= customer.created_at %></td>
+                <td><%= customer.updated_at %></td>
                 <td><%= link_to 'Show', customer %></td>
                 <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
                 <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
